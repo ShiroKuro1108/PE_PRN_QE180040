@@ -9,15 +9,16 @@ namespace PE.API.Data
         {
         }
 
-        public DbSet<PE.API.Models.Poster> Posters { get; set; }
+        public DbSet<PE.API.Models.Movie> Movies { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Poster>(entity =>
+            modelBuilder.Entity<Movie>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(200);
-                entity.Property(e => e.Description).IsRequired().HasMaxLength(1000);
-                entity.Property(e => e.ImageUrl).HasMaxLength(500);
+                entity.Property(e => e.Title).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.Genre).HasMaxLength(100);
+                entity.Property(e => e.PosterUrl).HasMaxLength(500);
             });
         }
     }
