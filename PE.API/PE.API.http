@@ -1,0 +1,6 @@
+@PE.API_HostAddress = http://localhost:5042
+
+GET {{PE.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
